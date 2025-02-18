@@ -5,7 +5,8 @@
 ```sh
 git init
 uv init app 
-uv add fastapi --extra standard
+uv add fastapi --extra standard 
+uv add pydantic-settings
 uv run fastapi dev --help
 uv run fastapi dev app/main.py --port=8001
 
