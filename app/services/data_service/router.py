@@ -1,10 +1,17 @@
-from fastapi import APIRouter
-from .models import Item
+from fastapi import APIRouter, Security
+from typing import List
 
-router = APIRouter()
+from .models import Item
+from ...auth.api_key import  verify_api_key
+
+router = APIRouter(dependencies=[Security(verify_api_key)])
 
 # In-memory storage for demonstration purposes
 items = {}
+
+@router.get("/items/", response_model=List[Item], operation_id="getItems")
+async def get_items():
+    return list(items.values())
 
 @router.post("/items/", response_model=Item, operation_id="createItem")
 async def create_item(item: Item):
