@@ -6,6 +6,7 @@ Simple template for FastAPI projects
 
 ``` sh
 uvx cruft create https://github.com/plindman/fastapi-base
+uvx cruft update
 ```
 
 ## Commands used to create it
