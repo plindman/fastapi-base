@@ -1,0 +1,11 @@
+ services:
+  fastapi:
+    # Build the image from the Dockerfile in the current directory
+    build: .
+
+    environment:
+      - FASTAPI_API_KEY=${FASTAPI_API_KEY}
+
+    # Host the FastAPI application on port 8000
+    ports:
+      - "8000:8000"

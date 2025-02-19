@@ -1,17 +1,23 @@
-FROM python:3.10-slim
+FROM python:3.12-slim-bookworm
+COPY --from=ghcr.io/astral-sh/uv:0.6.1 /uv /uvx /bin/
 
-# Install uv.
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+ENV UV_COMPILE_BYTECODE=1
+ENV UV_LINK_MODE=copy
 
-# Create working directory.
-WORKDIR /project
+WORKDIR /app
 
-# Install the application dependencies.
-COPY pyproject.toml /project/pyproject.toml
-RUN uv sync --frozen --no-cache
+# Build the .venv
+ADD pyproject.toml /app
+ADD uv.lock /app
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --frozen
 
-# Copy the application into the container.
-COPY ./app /project/app
+# Copy app and run
+ADD app /app
 
-# Run the application.
-CMD ["uv", "run", "fastapi", "run", "app/main.py", "--port", "8080", "--host", "0.0.0.0"]
+# Run the FastAPI application by default
+ENV PATH="/app/.venv/bin:$PATH"
+
+CMD ["fastapi", "run", "/app/main.py"]
+# "uv", "run", 
+# "--host", "0.0.0.0", 
