@@ -17,9 +17,3 @@ uv run fastapi dev app/main.py --port=8000
 ```
 
 
-```sh
-uv run fastapi dev app/main.py --port=8000
-uv run fastapi run app/main.py
-uv run fastapi dev --help
-uv run pytest
-```
