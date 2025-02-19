@@ -1,7 +1,7 @@
 from fastapi import Security, HTTPException
 from fastapi.security import APIKeyHeader
 
-from ..config import get_settings
+from .config import get_settings
 settings = get_settings()
 
 # Security schemes

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Security
 from typing import List
 
 from .models import Item
-from ...auth.api_key import  verify_api_key
+from ...core.auth_api_key import  verify_api_key
 
 router = APIRouter(dependencies=[Security(verify_api_key)])
 
