@@ -1,0 +1,11 @@
+{
+    "template": "https://github.com/plindman/fastapi-base",
+    "commit": "abc123",
+    "skip": [
+      "pyproject.toml",
+      "README.md",
+      "docker-compose.yml",
+      "docker-compose.dev.yml"
+    ]
+  }
+  
