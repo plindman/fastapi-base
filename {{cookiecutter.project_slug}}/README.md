@@ -1,6 +1,12 @@
-# template-fastapi
+# fastapi-base
 
 Simple template for FastAPI projects
+
+## How to use
+
+``` sh
+uvx cruft create https://github.com/plindman/fastapi-base
+```
 
 ## Commands
 
