@@ -28,12 +28,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Logging
 # OpenTelemetry ASGI Instrumentation
 # https://github.com/florimondmanca/awesome-asgi
 # from opentelemetry.instrumentation.asgi import ASGIInstrumentor
 # ASGIInstrumentor.instrument_app(app)
-
-# Logging
 
 # Routes
 from app.core.router import router as app_router
