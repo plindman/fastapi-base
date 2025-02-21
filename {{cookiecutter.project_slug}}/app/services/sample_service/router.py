@@ -4,7 +4,7 @@ from typing import List
 from .models import Item
 from ...core.auth_api_key import  verify_api_key
 
-router = APIRouter(dependencies=[Security(verify_api_key)])
+router = APIRouter(tags=["Sample"], prefix="/samples", dependencies=[Security(verify_api_key)])
 
 # In-memory storage for demonstration purposes
 items = {}

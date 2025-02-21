@@ -6,5 +6,5 @@ from fastapi import APIRouter
 # router = APIRouter(dependencies=[Security(verify_api_key)])
 router = APIRouter(tags=["Services"], prefix="/api/v1")
 
-from .data_service import router as data_router
+from .sample_service import router as data_router
 router.include_router(data_router)
