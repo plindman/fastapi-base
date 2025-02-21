@@ -1,7 +1,5 @@
 ''' fastAPI app main file ''' 
 from fastapi import FastAPI
-from app.core.router import router as app_router
-from app.services.data_service.router import router as data_service_router
 
 app = FastAPI()
 app.title = "[API app title here]"
@@ -20,5 +18,8 @@ app.title = "[API app title here]"
 # Security
 
 # Routes
+from app.core.router import router as app_router
 app.include_router(app_router, tags=["App"], prefix="/app", )
-app.include_router(data_service_router, prefix="/data", tags=["Data"])
+
+# from app.services.data_service.router import router as data_service_router
+# app.include_router(data_service_router, prefix="/data", tags=["Data"])
