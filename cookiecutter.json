@@ -1,6 +1,6 @@
 {
-    "project_name": "FastAPI base for projects",
-    "project_slug": "fastapi_base",
-    "description": "A FastAPI base template",
-    "author": "Pontus Lindman"
-  }
+    "project_name": "FastAPI app",
+    "project_slug": "fastapi_app",
+    "description": "A FastAPI app from fastapi-base template",
+    "author": ""
+}
