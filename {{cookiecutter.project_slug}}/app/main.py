@@ -1,8 +1,10 @@
 ''' fastAPI app main file ''' 
 from fastapi import FastAPI
-
 app = FastAPI()
-app.title = "[API app title here]"
+
+from .core.config import get_settings
+settings = get_settings()  
+app.title = settings.app_name
 
 # Middleware 
 # https://fastapi.tiangolo.com/tutorial/middleware/
