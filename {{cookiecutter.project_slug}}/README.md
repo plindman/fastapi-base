@@ -2,18 +2,20 @@
 
 FastAPI project based on plindman/fastapi-base
 
-## Getting started
+## Pre-requisites
 
-1. Set the API key in environment variable or `.env` in the root folder
+- uv(x) or other Python environment
 
-``` ini
-FASTAPI_API_KEY=[your api key]
+## Create app using cruft 
+
+Run command in the parent folder.
+
+``` sh
+uvx cruft create https://github.com/plindman/fastapi-base
 ```
 
-2. Run the development server
-
-```sh
-uv run fastapi dev app/main.py --port=8000
-```
-
-
+Cruft will ask you enter the following info:
+1. Project name
+1. Project slug
+1. Project description
+1. Author
