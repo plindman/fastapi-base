@@ -4,6 +4,7 @@ from app.core.router import router as app_router
 from app.services.data_service.router import router as data_service_router
 
 app = FastAPI()
+app.title = "[API app title here]"
 
 # Middleware 
 # https://fastapi.tiangolo.com/tutorial/middleware/
