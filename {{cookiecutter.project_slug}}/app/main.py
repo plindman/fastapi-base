@@ -39,5 +39,5 @@ app.add_middleware(
 from app.core.router import router as app_router
 app.include_router(app_router, tags=["App"], prefix="/app", )
 
-from app.services import services_router
+from app.services import router as services_router
 app.include_router(services_router)
