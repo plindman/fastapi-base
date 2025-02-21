@@ -7,10 +7,27 @@ app.title = "[API app title here]"
 # Middleware 
 # https://fastapi.tiangolo.com/tutorial/middleware/
 # https://fastapi.tiangolo.com/advanced/middleware/
+
 # HTTPSRedirectMiddleware
+# from starlette.middleware.httpsredirect import HTTPSRedirectMiddleware
+# app.add_middleware(HTTPSRedirectMiddleware)
+
 # TrustedHostMiddleware
-# https://fastapi.tiangolo.com/tutorial/cors/
+# from starlette.middleware.trustedhost import TrustedHostMiddleware
+# app.add_middleware(TrustedHostMiddleware)
+
 # CORS
+# https://fastapi.tiangolo.com/tutorial/cors/
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust this to your needs
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # https://github.com/florimondmanca/awesome-asgi
 # OpenTelemetry ASGI Instrumentation
 
