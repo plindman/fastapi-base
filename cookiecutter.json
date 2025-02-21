@@ -2,5 +2,6 @@
     "project_name": "FastAPI app",
     "project_slug": "fastapi_app",
     "description": "A FastAPI app from fastapi-base template",
-    "author": ""
+    "author": "",
+    "git_init": ["yes", "no"]
 }
